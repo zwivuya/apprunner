@@ -5,7 +5,7 @@ build:
     pre-build:
       - yum install -y ImageMagick ImageMagick-devel
       - yum install -y php-pear php-devel
-      - pecl install Imagick -yes
+      - pecl install imagick
       - echo "extension=imagick.so" >> /etc/php.ini
     build:
       - echo no build command for this PHP project
