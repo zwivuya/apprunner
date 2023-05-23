@@ -1,0 +1,16 @@
+version: 1.0
+runtime: php81
+build:
+  commands:
+    pre-build:
+      - yum install -y ImageMagick ImageMagick-devel
+      - yum install -y php-pear php-devel
+      - pecl install Imagick -yes
+      - echo "extension=imagick.so" >> /etc/php.ini
+    build:
+      - echo no build command for this PHP project
+run:
+  command: php -S 0.0.0.0:3000 -t .
+  network:
+    port: 3000
+    env: APP_PORT
