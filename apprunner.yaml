@@ -6,6 +6,7 @@ build:
       - wget http://www.imagemagick.org/download/ImageMagick.tar.gz
       - tar -vxf ImageMagick.tar.gz
       - sudo yum -y install libpng-devel libjpeg-devel libtiff-devel
+      - ls
       - cd ImageMagick
       - ./configure --without-x
       - make && make install
