@@ -3,13 +3,10 @@ runtime: php81
 build:
   commands:
     pre-build:
-      - wget http://www.imagemagick.org/download/ImageMagick.tar.gz
-      - tar -vxf ImageMagick.tar.gz
-      - sudo yum -y install libpng-devel libjpeg-devel libtiff-devel
-      - ls
-      - cd ImageMagick-7.1.1-10
-      - ls
-      - make && make install
+      - yum install -y ImageMagick ImageMagick-devel
+      - yum install -y php-pear php-devel
+      - pecl install Imagick -yes
+      - echo "extension=imagick.so" >> /etc/php.ini
     build:
       - echo no build command for this PHP project
       - php --ri imagick
