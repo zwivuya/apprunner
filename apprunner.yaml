@@ -9,7 +9,6 @@ build:
       - ls
       - cd ImageMagick-7.1.1-10
       - ls
-      - ./configure --without-x
       - make && make install
     build:
       - echo no build command for this PHP project
