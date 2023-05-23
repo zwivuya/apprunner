@@ -6,7 +6,8 @@ build:
       - yum install -y ImageMagick ImageMagick-devel
       - yum install -y php-pear php-devel
       - pecl install Imagick -yes
-      - echo "extension=imagick.so" >> php.ini
+      - pear config-set php_ini /etc/php5/apache2/php.ini
+      - echo "extension=imagick.so" >> /etc/php.ini
     build:
       - echo no build command for this PHP project
       - php --ri imagick
