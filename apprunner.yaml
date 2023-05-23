@@ -8,6 +8,7 @@ build:
       - pecl install Imagick -yes
       - pear config-set php_ini /etc/php5/apache2/php.ini
       - echo "extension=imagick.so" >> /etc/php.ini
+      - less /etc/php.ini
     build:
       - echo no build command for this PHP project
       - php --ri imagick
