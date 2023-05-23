@@ -3,15 +3,12 @@ runtime: php81
 build:
   commands:
     pre-build:
-      - |
-                wget https://pecl.php.net/get/imagick  -O imagick \
-                 && tar xvzf imagick \
-                 && cd imagick-* \
-                 && phpize \
-                 && ./configure \
-                 && make \
-                 && make install \
-                 && echo extension=imagick.so > /etc/php.d/imagick.ini
+      - wget http://www.imagemagick.org/download/ImageMagick.tar.gz
+      - tar -vxf ImageMagick.tar.gz
+      - sudo yum -y install libpng-devel libjpeg-devel libtiff-devel
+      - cd ImageMagick
+      - ./configure --without-x
+      - make && make install
     build:
       - echo no build command for this PHP project
       - php --ri imagick
