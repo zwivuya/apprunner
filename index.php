@@ -1,5 +1,5 @@
-<html>
-
-<?php echo "Hello Zwivhuya" ?>
-
-</html>
+ <?php 
+      echo "<pre>";
+      print_r(get_loaded_extensions());
+      echo "<pre/>";
+ ?>
