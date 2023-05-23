@@ -3,15 +3,15 @@ runtime: php81
 build:
   commands:
     pre-build:
-      - sudo yum install ImageMagick -y
-      - sudo yum install ImageMagick-devel -y
-      - git clone https://github.com/Imagick/imagick 
-      - cd imagick
-      - phpize
-      - ./configure
-      - make
-      - make install
-      - echo extension=imagick.so > /etc/php.d/imagick.ini
+      - |
+                wget https://pecl.php.net/get/imagick  -O imagick \
+                 && tar xvzf imagick \
+                 && cd imagick-* \
+                 && phpize \
+                 && ./configure \
+                 && make \
+                 && make install \
+                 && echo extension=imagick.so > /etc/php.d/imagick.ini
     build:
       - echo no build command for this PHP project
       - php --ri imagick
