@@ -1,6 +1,6 @@
-<?php
+<?php 
+      echo "<pre>";
+      print_r(get_loaded_extensions());
+      echo "<pre/>";
+ ?>
 
-if (!extension_loaded('imagick')){
-    echo 'imagick not installed';
-}
-?>
