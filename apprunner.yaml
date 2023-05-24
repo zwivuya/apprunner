@@ -4,11 +4,12 @@ build:
   commands:
     pre-build:
       - yum install -y ImageMagick ImageMagick-devel
-      - yum install -y php-pear php-devel
-      - pecl install Imagick -yes
-      - pear config-set php_ini /etc/php.ini
-      - echo "extension=imagick.so" >> /etc/php.ini
-      - less /etc/php.ini
+      - yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+      - yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+      - yum install yum-utils
+      - yum-config-manager --enable   remi-php81
+      - yum install php-cli php-imagick
+
     build:
       - echo no build command for this PHP project
 run:
