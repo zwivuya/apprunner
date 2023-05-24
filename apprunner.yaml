@@ -4,8 +4,8 @@ build:
   commands:
     pre-build:
       - yum install -y ImageMagick ImageMagick-devel
-      - yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-      - yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+      - yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+      - yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
       - yum install yum-utils
       - yum-config-manager --enable   remi-php81
       - yum install php-cli php-imagick
