@@ -3,8 +3,6 @@ runtime: php81
 build:
   commands:
     pre-build:
-      - sudo yum install ImageMagick -y
-      - sudo yum install ImageMagick-devel -y
       - git clone https://github.com/Imagick/imagick 
       - cd imagick && phpize
       - cd imagick && ./configure
