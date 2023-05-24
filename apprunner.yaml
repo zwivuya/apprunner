@@ -3,15 +3,10 @@ runtime: php81
 build:
   commands:
     pre-build:
-      - yum install -y ImageMagick ImageMagick-devel
-      - yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-      - yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-      - yum install yum-utils
-      - yum-config-manager --enable   remi-php81
-      - yum install php-cli php-imagick
-
+      - php -m
     build:
       - echo no build command for this PHP project
+      - php -m
 run:
   command: php -S 0.0.0.0:3000 -t .
   network:
