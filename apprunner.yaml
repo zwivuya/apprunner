@@ -6,12 +6,10 @@ build:
       - sudo yum install ImageMagick -y
       - sudo yum install ImageMagick-devel -y
       - git clone https://github.com/Imagick/imagick 
-      - ls
       - cd imagick && phpize
       - cd imagick && ./configure
       - cd imagick && make
       - cd imagick && make install
-      - echo extension=imagick.so > /etc/php.d/imagick.ini
     build:
       - echo no build command for this PHP project
       - php -m
