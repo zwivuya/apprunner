@@ -9,7 +9,7 @@ build:
       - ls
       - cd imagick
       - ls
-      - ./configure
+      - imagick/./configure
       - phpize
       - make
       - make install
