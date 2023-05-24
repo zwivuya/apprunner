@@ -7,6 +7,7 @@ build:
       - yum install -y php-pear php-devel
       - pecl install Imagick -yes
       - echo "extension=imagick.so" >> /etc/php.ini
+      - echo "extension=imagick.so" >> /etc/php.ini
     build:
       - echo no build command for this PHP project
       - php -m
