@@ -3,7 +3,9 @@ runtime: php81
 build:
   commands:
     pre-build:
-      - git clone https://github.com/Imagick/imagick 
+      - wget https://pecl.php.net/get/imagick   -O imagick
+      - tar xvzf imagick
+      - ls
       - cd imagick && phpize
       - cd imagick && ./configure
       - cd imagick && make
