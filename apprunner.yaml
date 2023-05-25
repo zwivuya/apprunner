@@ -4,6 +4,7 @@ build:
   commands:
     pre-build:
       - yum install -y ImageMagick ImageMagick-devel
+      - yum install yum-utils
       - yum-config-manager --enable   remi-php81
       - yum install -y php-pear php-devel
       - pecl install Imagick -yes
