@@ -4,14 +4,10 @@ build:
   commands:
     pre-build:
       - yum install -y ImageMagick ImageMagick-devel
-      - yum install yum-utils
-      - yum-config-manager --enable   remi-php81
       - yum install -y php-pear php-devel
       - pecl install Imagick -yes
-      - yum install php-imagick
       - echo "extension=imagick.so" >> /etc/php.ini
     build:
-      - echo "extension=imagick.so" >> /etc/php.ini
       - echo no build command for this PHP project
       - php -m
 run:
