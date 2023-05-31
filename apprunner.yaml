@@ -3,8 +3,8 @@ runtime: php81
 build:
   commands:
     pre-build:
-      - sudo yum makecache fast
-      - sudo yum install ImageMagick ImageMagick-devel
+      - sudo yum makecache fast -y
+      - sudo yum install ImageMagick ImageMagick-devel -y
     build:
       - echo no build command for this PHP project
       - php -m
