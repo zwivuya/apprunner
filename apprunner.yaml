@@ -1,12 +1,14 @@
 version: 1.0
-runtime: php8.1.10
+runtime: php81
 build:
   commands:
     pre-build:
-      - yum install -y ImageMagick ImageMagick-devel
-      - yum install -y php-pear php-devel
-      - pecl install Imagick -yes
-      - echo "extension=imagick.so" >> /etc/php.ini
+      - dnf config-manager --set-enabled crb
+      - dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+      - dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+      - dnf module reset php
+      - dnf module install php:remi-8.1
+      - dnf install php-cli php-imagick
     build:
       - echo no build command for this PHP project
       - php -m
