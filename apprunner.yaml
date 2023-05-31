@@ -6,7 +6,6 @@ build:
       - sudo yum makecache fast -y
       - sudo yum install ImageMagick ImageMagick-devel -y
       - echo "extension=imagick.so" >> /etc/php.ini
-      - convert -version
     build:
       - echo no build command for this PHP project
       - php -m
