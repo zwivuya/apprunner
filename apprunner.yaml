@@ -5,8 +5,8 @@ build:
     pre-build:
     build:
       - sudo yum update -y
-      - sudo yum makecache fast
-      - sudo yum install ImageMagick ImageMagick-devel
+      - sudo yum makecache fast -y
+      - sudo yum install ImageMagick ImageMagick-devel -y
 run:
   command: php -S 0.0.0.0:3000 -t .
   network:
