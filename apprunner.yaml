@@ -5,14 +5,11 @@ build:
     pre-build:
     build:
       - cat /etc/os-release
-      - pecl download imagick
-      - tar xzf imagick-3.7.0.tgz
-      - imagick-3.7.0/zts-phpize
-      - imagick-3.7.0/./configure --with-php-config=/usr/bin/zts-php-config
-      - imagick-3.7.0/make
-      - imagick-3.7.0/make install
-      - echo ‘extension=imagick’ > /etc/php-zts.d/20-imagick.ini
-zts-php -i | grep imagick
+      - yum install -y ImageMagick ImageMagick-devel
+      - yum install -y php-pear
+      - yum install php-devel.x86_64 -y
+      - pecl install Imagick -yes
+      - echo "extension=imagick.so" >> /etc/php.ini
 run:
   command: php -S 0.0.0.0:3000 -t .
   network:
