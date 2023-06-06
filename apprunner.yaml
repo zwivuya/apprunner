@@ -4,6 +4,7 @@ build:
   commands:
     pre-build:
     build:
+      - dnf install dnf
       - yum install -y ImageMagick ImageMagick-devel
       - yum install -y php-pear
       - sudo dnf install php-devel -y
