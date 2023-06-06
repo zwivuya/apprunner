@@ -4,9 +4,9 @@ build:
   commands:
     pre-build:
     build:
+      - php -v
+      - cat /etc/os-release
       - yum install php-pear -y
-      - rpm -Va --nofiles --nodigest
-      - yum install php-devel -y  --skip-broken
       - yum install gcc -y
       - yum install ImageMagick -y
       - yum install ImageMagick-devel -y
