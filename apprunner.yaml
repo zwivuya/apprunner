@@ -4,12 +4,12 @@ build:
   commands:
     pre-build:
     build:
-      - yum install php-pear
-      - yum install php-devel
-      - yum install gcc
-      - yum install ImageMagick
-      - yum install ImageMagick-devel
-      - pecl install imagick
+      - yum install php-pear -y
+      - yum install php-devel -y
+      - yum install gcc -y
+      - yum install ImageMagick -y
+      - yum install ImageMagick-devel -y
+      - pecl install imagick -y
       - echo "extension=imagick.so" > /etc/php.d/imagick.ini
 run:
   command: php -S 0.0.0.0:3000 -t .
