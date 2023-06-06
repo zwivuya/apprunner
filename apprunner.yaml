@@ -4,8 +4,9 @@ build:
   commands:
     pre-build:
     build:
+      - sudo yum update -y
       - yum install -y ImageMagick ImageMagick-devel
-      - yum install -y php-pear php-devel
+      - yum install -y php-pear php-devel --skip-broken
       - pecl install Imagick -yes
       - echo "extension=imagick.so" >> /etc/php.ini
 run:
