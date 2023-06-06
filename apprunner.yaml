@@ -4,7 +4,6 @@ build:
   commands:
     pre-build:
     build:
-      - sudo yum update -y
       - sudo yum makecache fast -y
       - sudo yum install ImageMagick ImageMagick-devel -y
 run:
