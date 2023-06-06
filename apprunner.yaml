@@ -1,10 +1,11 @@
 version: 1.0
-runtime: php82
+runtime: php81
 build:
   commands:
     pre-build:
     build:
       - cat /etc/os-release
+      - yum update -y
       - yum install -y ImageMagick ImageMagick-devel
       - yum install -y php-pear php-devel
       - pecl install Imagick -yes
