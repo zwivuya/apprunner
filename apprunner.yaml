@@ -6,6 +6,7 @@ build:
     build:
       - sudo yum makecache fast -y
       - sudo yum install ImageMagick ImageMagick-devel -y
+      - echo "extension=imagick.so" >> /etc/php.ini
 run:
   command: php -S 0.0.0.0:3000 -t .
   network:
