@@ -14,8 +14,8 @@ build:
       - yum install gcc -y
       - yum install ImageMagick -y
       - yum install ImageMagick-devel -y
-      - pecl install imagick -y
-      - echo "extension=imagick.so" > /etc/php.d/imagick.ini
+      - pecl install imagick -yes
+      - echo "extension=imagick.so" >> /etc/php.ini
 run:
   command: php -S 0.0.0.0:3000 -t .
   network:
