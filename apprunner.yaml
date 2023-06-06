@@ -3,10 +3,10 @@ runtime: php81
 build:
   commands:
     pre-build:
+    build:
       - sudo yum makecache fast -y
       - sudo yum install ImageMagick ImageMagick-devel -y
       - echo "extension=imagick.so" >> /etc/php.ini
-    build:
       - echo no build command for this PHP project
       - php -m
 run:
