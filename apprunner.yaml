@@ -6,7 +6,7 @@ build:
     build:
       - cat /etc/os-release
       - yum install -y ImageMagick ImageMagick-devel
-      - yum install -y php-pear php-devel gcc libzip-devel zlib-devel
+      - yum install -y php-pear php-devel
       - pecl install Imagick -yes
       - echo "extension=imagick.so" >> /etc/php.ini
 run:
